@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "husky:prepare": "npx husky install",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:staged": "npm run test --findRelatedTests"
   },
   "keywords": [],
   "author": "",
