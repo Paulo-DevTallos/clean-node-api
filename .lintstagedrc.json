@@ -1,7 +1,3 @@
 {
-  "*.ts": [
-    "npx eslint 'src/**' --fix",
-    "npx prettier --check 'src/**'",
-    "git-commit-msg-linter --edit $1"
-  ]
+  "*.ts": ["npx eslint 'src/**' --fix", "npx prettier --check 'src/**'"]
 }
