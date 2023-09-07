@@ -30,6 +30,7 @@ para configurar os commits no husky:
 - Como o Eslint vai sempre observar arquivos alterados dentro da pasta SRC ele sempre apontará um erro caso esse arquivo não seja adicionado ao commit. No nosso contexto isso ocorreu com o arquivo de testes unitários, pois o mesmo não foi adicionado ao commit e mesmo assim foi executado, visto que ele possui comandos de execução para o teste. Para resolver esse problema passamos para o script a flag --passWithNoTests. Isso fará que o arquivo seja aprovado pelo commiter sem que o teste precise ser executado pela primeira vez.
 
 - Comandos para reiniciar o git: git rm -r --cached ., git add .
+- Implementar CI para testes
 
 ## Links importantes:
 
