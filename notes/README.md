@@ -32,6 +32,11 @@ para configurar os commits no husky:
 - Comandos para reiniciar o git: git rm -r --cached ., git add .
 - Implementar CI para testes
 
+- Uma abordagem importante relacionada a variavel "sut" para injeção de dependencias e mocks é mover a criação do sut para uma factory
+  const makeSut = (): SignUpController => {
+  return new SignUpController();
+  };
+
 ## Links importantes:
 
 <a href="https://node.green/#ES2015">Doc versões do ECMAScript</a>
