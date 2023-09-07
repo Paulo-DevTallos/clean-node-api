@@ -39,6 +39,36 @@ para configurar os commits no husky:
 
 O benefício dessa abordagem está em garantir que ao adicionar novas dependencias essa alteração não precisará ser alterada em todos os construtores de todos os testes.
 
+- Stub é um tipo de mock que marreta um valor que sempre vai retornar a mesma coisa
+- Uma Observação a cerca de mocks para testar falso positivo com mocks. Uma boa pratica é que todo teste em casos booleanos sejam true por padrão, com isso caso você precise chekar um dado como false por padrão, ao aplicar o stub é necessário retornar a especificação do seu valor onde você deseja fazer essa chekagem, ou seja, é preciso realizar um mock ao contrário.
+  Ex:
+
+  Cria-se uma interface que estabelece tipos de retorno que a interface irá receber com isso a instancia da classe principal receberá o tipo de acordo com a interface para gerir suas instancias:
+
+  interface SutTypes {
+  sut: SignUpController;
+  emailValidatorStub: EmailValidator;
+  }
+
+const makeSut = (): SutTypes => {
+class EmailValidatorStub implements EmailValidator {
+isValid(email: string): boolean {
+console.log(email);
+return true;
+}
+}
+
+const emailValidatorStub = new EmailValidatorStub();
+const sut = new SignUpController(emailValidatorStub);
+
+return {
+sut,
+emailValidatorStub,
+};
+};
+
+Como o retorno é do tipo SutTypes os demais testes que utilizam essa variavel passam a receber um objeto { sut }
+
 ## Links importantes:
 
 <a href="https://node.green/#ES2015">Doc versões do ECMAScript</a>
