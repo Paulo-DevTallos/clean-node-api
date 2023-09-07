@@ -37,6 +37,8 @@ para configurar os commits no husky:
   return new SignUpController();
   };
 
+O benefício dessa abordagem está em garantir que ao adicionar novas dependencias essa alteração não precisará ser alterada em todos os construtores de todos os testes.
+
 ## Links importantes:
 
 <a href="https://node.green/#ES2015">Doc versões do ECMAScript</a>
