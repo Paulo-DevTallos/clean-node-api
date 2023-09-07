@@ -52,4 +52,23 @@ describe("SignUp Controller", () => {
     expect(httpResponse.statusCode).toBe(400);
     expect(httpResponse.body).toEqual(new Error("Missing param: password"));
   });
+
+  it("Should return 400 if no passwordConfirmation is provided", () => {
+    const sut = new SignUpController();
+
+    const httpRequest = {
+      body: {
+        name: "any_name",
+        email: "any_email@email.com",
+        password: "123456",
+      },
+    };
+
+    const httpResponse = sut.handle(httpRequest);
+
+    expect(httpResponse.statusCode).toBe(400);
+    expect(httpResponse.body).toEqual(
+      new Error("Missing param: passwordConfirmation"),
+    );
+  });
 });
