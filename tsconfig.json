@@ -8,5 +8,6 @@
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "allowJs": true
-  }
+  },
+  "include": ["src/**/*", "tests/**/*"]
 }
