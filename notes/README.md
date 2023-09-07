@@ -69,6 +69,9 @@ emailValidatorStub,
 
 Como o retorno é do tipo SutTypes os demais testes que utilizam essa variavel passam a receber um objeto { sut }
 
+- Dica: Em caso de erros por parte do client, é importante categorizar erros que deixem ele ciente de algum erro que ele tenha cometido
+- Em caso de erros do servidor ou algo mais interno voce pode aplicar uma mensagem mais generica
+
 ## Links importantes:
 
 <a href="https://node.green/#ES2015">Doc versões do ECMAScript</a>
